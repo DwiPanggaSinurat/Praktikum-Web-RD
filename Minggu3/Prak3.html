@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum3</title>
+    
+</head>
+    <body>
+        <label for="tema">Pilih Tema : </label>
+        <select name="tema" id="tema" onchange="pilihTema()">
+            <option value="putih">White</option>
+            <option value="hitam">Black</option>
+        </select>
+    <br>
+    <h1>Welcome To My Website</h1>
+    <br>
+        <label for="klub">Pilih Klub Favorit Anda : </label>
+        <select name="klub" id="klub" onchange="pilihKlub()">
+            <option value="Barcelona">Barcelona</option>
+            <option value="Liverpool">Liverpool</option>
+            <option value="Juventus">Juventus</option>
+        </select>
+
+    <p id="test"></p>
+
+        <label for="faktorial">Input Number: </label>
+        <input type="text" id="faktorial" name="faktorial">
+        <button type="submit" id="faktorial" onclick="pilihFaktorial()">Get Factorial</button>
+
+    <p id="test2"></p>
+
+    <script>
+        
+        function pilihTema(){
+            var tema = document.getElementById("tema").value;
+            if(tema == "putih"){
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }else if(tema == "hitam"){
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }  
+        }
+
+        function pilihKlub(){
+            var klub = document.getElementById("klub").value;
+                if (klub == "Barcelona"){
+                    document.getElementById("test").innerHTML = "Barcelona atau Barça, adalah klub sepak bola profesional yang berbasis di Barcelona, Catalunya, Spanyol. Barcelona sejauh ini telah memenangkan 5 gelar UEFA Champion League";
+                }else if (klub == "Liverpool"){
+                    document.getElementById("test").innerHTML = "Liverpool adalah sebuah klub sepak bola asal Inggris yang berbasis di Kota Liverpool, Inggris. Liverpool sejauh ini telah meraih 6 gelar UEFA Champion League";
+                }else if (klub == "Juventus"){
+                    document.getElementById("test").innerHTML = "Juventus adalah klub sepak bola profesional asal Italia yang berbasis di kota Turin, Piemonte. Sejauh ini Juventus telah meraih 2 gelar UEFA Champion League";
+                }else{
+                document.getElementById("test").innerHTML = "";
+            }
+        }
+
+        function pilihFaktorial(){
+            var angka = document.getElementById("faktorial").value;
+            var hasil = 1;
+            var bil = 0;
+            for (bil = angka; bil >= 1; bil--){
+                hasil = hasil * bil;
+            }
+            document.getElementById("test2").innerHTML = hasil;
+        }
+        
+    </script>
+    
+</body>
+</html>
